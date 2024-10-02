@@ -1,0 +1,41 @@
+
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: #ffcf91;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .categorias {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+ 
+  .cart-widget {
+    position: relative;
+  }
+  
+  .cart-widget .fa-shopping-cart {
+    font-size: 24px;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
