@@ -2,13 +2,23 @@ import './App.css'
 import ItemListContainer from './components/ItemsListContainer'
 import NavBar from './components/NavBar'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
 function App() {
  
   return (
     <>
-      <NavBar />
-      <ItemListContainer texto="Aca se mostraran el contenido de la pagina"/>
+    <BrowserRouter>
+      <NavBar />  
+      <Routes>
+        <Route path="/" element={<ItemListContainer/>} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
