@@ -1,7 +1,8 @@
 import './App.css'
 import ItemListContainer from './components/ItemsListContainer'
-import NavBar from './components/NavBar'
+import NavBar from './components/Navbar'  //VER PORQUE NO ME FUNCIONA CON NavBar
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import ItemDetailContainer from './components/ItemDetailContainer'
 import {
   BrowserRouter,
   Routes,
@@ -17,6 +18,8 @@ function App() {
       <NavBar />  
       <Routes>
         <Route path="/" element={<ItemListContainer/>} />
+        <Route path="/category/:id" element={<ItemListContainer/>} />
+        <Route path="/item/:id" element={<ItemDetailContainer/>} />
       </Routes>
     </BrowserRouter>
     </>
