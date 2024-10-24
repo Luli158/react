@@ -1,6 +1,6 @@
 import './App.css'
 import ItemListContainer from './components/ItemsListContainer'
-import NavBar from './components/Navbar'  //VER PORQUE NO ME FUNCIONA CON NavBar
+import NavBar from './components/Navbar'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import {
