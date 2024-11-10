@@ -14,7 +14,9 @@ function ItemDetail ({detail}){
                 <Row><h1>{detail?.title}</h1></Row>
                 <Row>{detail?.description}</Row>
             </Col>
+            <ItemCount detail={detail}/>
         </Container>
+        
     )
 }
 

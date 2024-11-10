@@ -1,10 +1,13 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {useParams} from 'react-router-dom'
+import {cartContext} from '../context/cartContext'
 import ItemList from './ItemList'
 
 function ItemsListContainer() {
     const [items, setItems] = useState([])
-    const {id} = useParams()
+    const {id} = useParams(cartContext)
+
+    const value = useContext()
 
     useEffect(() => {
         const url = 'https://fakestoreapi.com/products'
