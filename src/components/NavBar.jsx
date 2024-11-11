@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
   
 function NavBar() {
@@ -17,6 +18,7 @@ function NavBar() {
             <Nav.Link as={Link} to="/category/women's clothing">Ropa Mujer</Nav.Link>
           </Nav>
           <Nav>
+            <CartWidget/>
             <Nav.Link href="#deets">Nosotros</Nav.Link>
             <Nav.Link href="#contacto">Contacto</Nav.Link>
           </Nav>

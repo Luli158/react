@@ -8,7 +8,6 @@ function ItemDetail ({detail}){
         <Container>
             <Col>
                 <img src={detail?.image} alt={detail?.title} style={{ maxWidth: '20%', height: 'auto' }} />
-                <ItemCount />
             </Col>
             <Col>
                 <Row><h1>{detail?.title}</h1></Row>
@@ -18,6 +17,7 @@ function ItemDetail ({detail}){
         </Container>
         
     )
+
 }
 
 export default ItemDetail

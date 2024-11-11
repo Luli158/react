@@ -9,6 +9,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import CartProvider from './context/cartProvider'
 
 function App() {
  
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<ItemListContainer/>} />
         <Route path="/category/:id" element={<ItemListContainer/>} />
         <Route path="/item/:id" element={<ItemDetailContainer/>} />
+        <Route path="/cart" elemnt={<CartProvider/>} />
       </Routes>
     </BrowserRouter>
     </>

@@ -7,7 +7,7 @@ function ItemsListContainer() {
     const [items, setItems] = useState([])
     const {id} = useParams(cartContext)
 
-    const value = useContext()
+    const value = useContext(cartContext)
 
     useEffect(() => {
         const url = 'https://fakestoreapi.com/products'
