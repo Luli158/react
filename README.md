@@ -28,5 +28,6 @@ Las principales dependencias utilizadas en el proyecto son:
   "react": "^18.3.1",
   "react-bootstrap": "^2.10.5",
   "react-dom": "^18.3.1",
-  "react-router-dom": "^6.27.0"
+  "react-router-dom": "^6.27.0",
+  "sweetalert": "^2.1.2"
 }

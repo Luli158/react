@@ -18,6 +18,9 @@ function Item ({item}) {
                         <Card.Text>
                             {item.description}
                         </Card.Text>
+                        <Card.Text>
+                           $ {item.price}
+                        </Card.Text>
                         <Button variant="primary" as={Link} to={`/item/${item.id}`}>Ver mas</Button>
                     </Card.Body>
                 </Card>

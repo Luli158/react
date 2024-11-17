@@ -12,10 +12,10 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to='/category/electronica'>Electronica</Nav.Link>
-            <Nav.Link as={Link} to='/category/joyeria'>Joyeria</Nav.Link>
-            <Nav.Link as={Link} to="/category/ropa hombre">Ropa Hombre</Nav.Link>
-            <Nav.Link as={Link} to="/category/ropa mujer">Ropa Mujer</Nav.Link>
+            <Nav.Link as={Link} to='/category/remeras'>Remeras</Nav.Link>
+            <Nav.Link as={Link} to='/category/pantalones'>Pantalones</Nav.Link>
+            <Nav.Link as={Link} to="/category/blusas">Blusas</Nav.Link>
+            <Nav.Link as={Link} to="/category/buzos">Buzos</Nav.Link>
           </Nav>
           <Nav>
             <CartWidget/>

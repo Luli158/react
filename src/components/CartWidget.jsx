@@ -12,6 +12,7 @@ function CartWidget() {
             <i className="fa fa-shopping-cart"></i>
             <span className="cart-count">{ getQuantity() }</span>
         </Button>
+        
     );
 }
 

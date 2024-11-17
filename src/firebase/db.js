@@ -33,10 +33,10 @@ export const getCategoryItems = async(id) => {
 } 
 
 export const getDetail = async (id) => {
-  const docRef = doc(db, "items", "id")
+  const docRef = doc(db, "items", id)
   const docSnap = await getDoc(docRef)
 
-  if (docSnap.exists(id)) {
+  if (docSnap.exists()) {
     return docSnap.data()
   } else {
     console.log("No existe ningun producto")
