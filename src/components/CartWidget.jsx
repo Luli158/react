@@ -1,15 +1,17 @@
 import './styles.css'
-import { useContext } from 'react';
-import { cartContext } from '../context/cartContext';
+import {useCart} from "../context/cartContext"
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 function CartWidget() {
-    const { getQuantity } = useContext(cartContext)
+    const {cart} = useCart()
+    const { getQuantity } = useCart()
     return(
         
-        <div className="cart-widget">
+        <Button as={Link} to="./Cart" className="cart-widget">
             <i className="fa fa-shopping-cart"></i>
             <span className="cart-count">{ getQuantity() }</span>
-        </div>
+        </Button>
     );
 }
 

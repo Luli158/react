@@ -2,6 +2,8 @@ import {useState, useEffect, useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import {cartContext} from '../context/cartContext'
 import ItemList from './ItemList'
+import Loader from './Loader'
+import { getItems, getCategoryItems } from "../firebase/db"
 
 function ItemsListContainer() {
     const [items, setItems] = useState([])
@@ -10,17 +12,19 @@ function ItemsListContainer() {
     const value = useContext(cartContext)
 
     useEffect(() => {
-        const url = 'https://fakestoreapi.com/products'
-        const urlCategory = `https://fakestoreapi.com/products/category/${id}`
-
-        fetch(id ? urlCategory : url)
-            .then(res => res.json())
+        if(!id) {
+            getItems()
             .then(res => setItems(res))
-            .catch(err => console.error('Error fetching data:', err))
+        } else {
+        getCategoryItems(id)
+            .then(res =>setItems(res))
+        }
     }, [id])
 
     return(
-        <ItemList items={items} />
+        <>
+            {items.length > 0 ? <ItemList items={items} /> : <Loader/>}
+        </>
     )
 }
 
