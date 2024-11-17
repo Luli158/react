@@ -2,9 +2,11 @@ import { serverTimestamp } from "firebase/firestore"
 import { useCart } from "../context/cartContext"
 import { createOrder } from "../firebase/db"
 import swal from "sweetalert"
+import { useNavigate } from "react-router-dom"
 
 function Cart() {
   const { cart, getTotal, clearCart } = useCart();
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -24,6 +26,7 @@ function Cart() {
       const idOrder = await createOrder(order)
       swal("Muchas gracias por su compra!", `El id de su compra es ${idOrder}`, "success")
       clearCart()
+      navigate("/")
     } catch (error) {
       swal("Error", "Hubo un problema al procesar tu orden, por favor intenta nuevamente.", "error")
     }

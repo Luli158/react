@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
 function CartWidget() {
-    const {cart} = useCart()
+    
     const { getQuantity } = useCart()
     return(
         

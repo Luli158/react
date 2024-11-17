@@ -4,7 +4,20 @@ import { useState } from 'react'
 function CartProvider ({children}) {
 
   const [cart, setCart] = useState([])
-  const addToCart = item => setCart ([...cart, item]) //a lo que hay en el carrito le agrega el item
+
+  const addToCart = (item) => {
+    setCart((cart) => {
+      const existingItem = cart.findIndex((prod) => prod.id === item.id)
+      if (existingItem !== -1) {
+        const updatedCart = [...cart];
+        updatedCart[existingItem].qty += item.qty
+        return updatedCart
+      } else {
+        return [...cart, item]
+      }
+    })
+  }
+
   const clearCart = () => setCart([])
 
   const getQuantity = () => {

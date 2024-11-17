@@ -10,10 +10,10 @@ function ItemCount({detail}){
     const handleAddToCart = () => addToCart({...detail, qty: count})
     
     return(
-        <div>
-            <p>{count}</p>
+        <div> 
             <button onClick={handleAdd}>+</button>
-            <button onClick={handleSub}>-</button>
+            <button>{count}</button>
+            {count > 1 ? (<button onClick={handleSub}>-</button>) : (<button>-</button>) }
             <button onClick={handleAddToCart}>Agregar al carrito</button>
         </div>
     )
