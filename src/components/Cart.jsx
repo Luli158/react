@@ -5,7 +5,7 @@ import swal from "sweetalert"
 import { useNavigate } from "react-router-dom"
 
 function Cart() {
-  const { cart, getTotal, clearCart } = useCart();
+  const { cart, getTotal, clearCart, removeFromCart} = useCart();
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -38,12 +38,17 @@ function Cart() {
       <p>El carrito está vacío</p>
     ) : (
       <>
-        {cart.map((prod) => (
-          <div key={prod.id}>
-            <p>{prod.title}</p>x<p>{prod.qty}</p>
-          </div>
-        ))}
+        <ul>
+          {cart.map((prod) => (
+            <li key={prod.id}>
+              {prod.title} x {prod.qty}
+              $ {prod.price*prod.qty}
+              <button onClick={() => removeFromCart(prod.id)}>Eliminar</button>
+            </li>
+          ))} 
+        </ul>
         <div>
+          <h5>TOTAL $ {getTotal()} </h5>
           <button onClick={clearCart} style={{ marginBottom: "10px" }}>
             Vaciar carrito
           </button>
